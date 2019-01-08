@@ -1,3 +1,4 @@
+-- Select Gerado Pela Rotina 1902 Capturado através do monitor ---
 ----------------------------------
 Timestamp: 18:21:59.664
 SELECT PCCLIENT.CODCLI, PCCLIENT.CLIENTE, PCCLIENT.FANTASIA, PCCLIENT.TELENT,
