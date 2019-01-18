@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls, Vcl.ExtCtrls,
+  VCLTee.TeCanvas;
 
 type
   TForm1 = class(TForm)
@@ -16,7 +17,37 @@ type
     lb_4: TLabel;
     txt_Usu: TEdit;
     txt_dt: TEdit;
-    GroupBox1: TGroupBox;
+    gpx_1: TGroupBox;
+    lb_5: TLabel;
+    gpx_2: TGroupBox;
+    lb_6: TLabel;
+    lb_7: TLabel;
+    lb_8: TLabel;
+    lb_9: TLabel;
+    lb_10: TLabel;
+    lb_11: TLabel;
+    lb_12: TLabel;
+    lb_13: TLabel;
+    txt_nprot: TEdit;
+    txt_codcli: TEdit;
+    txt_cliente: TEdit;
+    cbx_filial: TComboBox;
+    txt_assunto: TEdit;
+    txt_codmotivo: TEdit;
+    txt_motivo: TEdit;
+    Splitter1: TSplitter;
+    Splitter2: TSplitter;
+    txt_codtransp: TEdit;
+    txt_transp: TEdit;
+    txt_codmot: TEdit;
+    txt_mot: TEdit;
+    txt_usur: TEdit;
+    txt_codusur: TEdit;
+    btn_inserir: TButton;
+    btn_apagar: TButton;
+    ListBox1: TListBox;
+    lb_14: TLabel;
+    btn_gerar: TButton;
   private
     { Private declarations }
   public

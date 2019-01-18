@@ -3,8 +3,8 @@ object Form1: TForm1
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Tela Inicial'
-  ClientHeight = 508
-  ClientWidth = 960
+  ClientHeight = 509
+  ClientWidth = 1008
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object Form1: TForm1
   object lb_2: TLabel
     Left = 189
     Top = 48
-    Width = 73
+    Width = 69
     Height = 19
     Caption = 'Num. Ped.'
     Font.Charset = ANSI_CHARSET
@@ -67,11 +67,157 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object GroupBox1: TGroupBox
+  object lb_5: TLabel
+    Left = 396
+    Top = 48
+    Width = 141
+    Height = 19
+    Caption = 'N'#250'mero de Protocolo'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lb_6: TLabel
+    Left = 553
+    Top = 48
+    Width = 49
+    Height = 19
+    Caption = 'Cliente'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lb_7: TLabel
+    Left = 623
+    Top = 48
+    Width = 86
+    Height = 19
+    Caption = 'Raz'#227'o Social'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lb_8: TLabel
+    Left = 396
+    Top = 91
+    Width = 33
+    Height = 19
+    Caption = 'Filial'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lb_9: TLabel
+    Left = 453
+    Top = 91
+    Width = 54
+    Height = 19
+    Caption = 'Assunto'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lb_10: TLabel
+    Left = 535
+    Top = 91
+    Width = 124
+    Height = 19
+    Caption = 'Motivo Devolu'#231#227'o'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lb_11: TLabel
+    Left = 396
+    Top = 129
+    Width = 103
+    Height = 19
+    Caption = 'Transportadora'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lb_12: TLabel
+    Left = 645
+    Top = 130
+    Width = 67
+    Height = 19
+    Caption = 'Motorista'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lb_13: TLabel
+    Left = 396
+    Top = 171
+    Width = 27
+    Height = 19
+    Caption = 'Rca'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Splitter1: TSplitter
+    Left = 0
+    Top = 0
+    Height = 509
+    ExplicitLeft = 920
+    ExplicitTop = 432
+    ExplicitHeight = 100
+  end
+  object Splitter2: TSplitter
+    Left = 3
+    Top = 0
+    Height = 509
+    ExplicitLeft = 840
+    ExplicitTop = 424
+    ExplicitHeight = 100
+  end
+  object lb_14: TLabel
+    Left = 12
+    Top = 344
+    Width = 165
+    Height = 19
+    Caption = 'Descri'#231#227'o da Ocorr'#234'ncia'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object gpx_1: TGroupBox
     Left = 8
     Top = 8
     Width = 369
-    Height = 185
+    Height = 217
     Caption = 'Consulta Nfe'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -85,21 +231,21 @@ object Form1: TForm1
     Left = 24
     Top = 64
     Width = 145
-    Height = 33
+    Height = 21
     TabOrder = 0
   end
   object txt_Nped: TEdit
     Left = 189
     Top = 64
     Width = 156
-    Height = 33
+    Height = 21
     TabOrder = 1
   end
   object txt_Usu: TEdit
     Left = 26
     Top = 130
     Width = 143
-    Height = 33
+    Height = 21
     Color = clInactiveCaption
     TabOrder = 2
   end
@@ -107,8 +253,172 @@ object Form1: TForm1
     Left = 189
     Top = 130
     Width = 156
-    Height = 33
+    Height = 21
     Color = clInactiveCaption
     TabOrder = 3
+  end
+  object gpx_2: TGroupBox
+    Left = 382
+    Top = 8
+    Width = 618
+    Height = 217
+    Caption = 'Dados Nfe'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 5
+  end
+  object txt_nprot: TEdit
+    Left = 396
+    Top = 64
+    Width = 141
+    Height = 21
+    Color = clInactiveCaption
+    TabOrder = 6
+  end
+  object txt_codcli: TEdit
+    Left = 543
+    Top = 64
+    Width = 74
+    Height = 21
+    Color = clInactiveCaption
+    TabOrder = 7
+  end
+  object txt_cliente: TEdit
+    Left = 623
+    Top = 64
+    Width = 370
+    Height = 21
+    Color = clInactiveCaption
+    TabOrder = 8
+  end
+  object cbx_filial: TComboBox
+    Left = 396
+    Top = 107
+    Width = 33
+    Height = 21
+    TabOrder = 9
+  end
+  object txt_assunto: TEdit
+    Left = 435
+    Top = 107
+    Width = 94
+    Height = 21
+    TabOrder = 10
+  end
+  object txt_codmotivo: TEdit
+    Left = 535
+    Top = 107
+    Width = 50
+    Height = 21
+    TabOrder = 11
+  end
+  object txt_motivo: TEdit
+    Left = 640
+    Top = 107
+    Width = 353
+    Height = 21
+    TabOrder = 12
+  end
+  object txt_codtransp: TEdit
+    Left = 396
+    Top = 147
+    Width = 53
+    Height = 21
+    Color = clInactiveCaption
+    TabOrder = 13
+  end
+  object txt_transp: TEdit
+    Left = 453
+    Top = 147
+    Width = 186
+    Height = 21
+    Color = clInactiveCaption
+    TabOrder = 14
+  end
+  object txt_codmot: TEdit
+    Left = 645
+    Top = 147
+    Width = 53
+    Height = 21
+    Color = clInactiveCaption
+    TabOrder = 15
+  end
+  object txt_mot: TEdit
+    Left = 704
+    Top = 147
+    Width = 289
+    Height = 21
+    Color = clInactiveCaption
+    TabOrder = 16
+  end
+  object txt_usur: TEdit
+    Left = 455
+    Top = 187
+    Width = 289
+    Height = 21
+    Color = clInactiveCaption
+    TabOrder = 17
+  end
+  object txt_codusur: TEdit
+    Left = 396
+    Top = 187
+    Width = 53
+    Height = 21
+    Color = clInactiveCaption
+    TabOrder = 18
+  end
+  object btn_inserir: TButton
+    Left = 809
+    Top = 185
+    Width = 89
+    Height = 25
+    Caption = 'Inserir Dados'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 19
+  end
+  object btn_apagar: TButton
+    Left = 904
+    Top = 185
+    Width = 89
+    Height = 25
+    Caption = 'Apagar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 20
+  end
+  object ListBox1: TListBox
+    Left = 8
+    Top = 360
+    Width = 992
+    Height = 106
+    ItemHeight = 13
+    TabOrder = 21
+  end
+  object btn_gerar: TButton
+    Left = 888
+    Top = 472
+    Width = 112
+    Height = 25
+    Caption = 'Gerar Ocorr'#234'ncia'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 22
   end
 end
