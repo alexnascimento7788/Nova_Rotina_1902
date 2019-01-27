@@ -1,0 +1,237 @@
+unit Unit1;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
+  FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async,
+  FireDAC.Phys, FireDAC.Phys.MSAcc, FireDAC.Phys.MSAccDef, FireDAC.FMXUI.Wait,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
+  FMX.StdCtrls, FMX.Controls.Presentation, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client, FMX.Edit, FMX.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    FDConnection1: TFDConnection;
+    FDTable1: TFDTable;
+    Button1: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    lb_permissao: TLabel;
+    Label5: TLabel;
+    txt_nome: TEdit;
+    txt_sobrenome: TEdit;
+    txt_permissao: TEdit;
+    txt_idade: TEdit;
+    btn_cancelar: TButton;
+    bnt_editar: TButton;
+    btn_salvar: TButton;
+    btn_excluir: TButton;
+    btn_novo: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btn_novoClick(Sender: TObject);
+    procedure btn_salvarClick(Sender: TObject);
+    procedure FDTable1BeforePost(DataSet: TDataSet);
+    procedure FDTable1BeforeInsert(DataSet: TDataSet);
+    procedure btn_excluirClick(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure btn_cancelarClick(Sender: TObject);
+    procedure FDTable1BeforeEdit(DataSet: TDataSet);
+    procedure bnt_editarClick(Sender: TObject);
+    procedure Label1Click(Sender: TObject);
+  private
+    { Private declarations }
+
+    procedure Limpar;
+    procedure BloquearTXT;
+    procedure CarregarDados;
+    procedure Habilitartxt;
+
+
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.fmx}
+
+ procedure TForm1.Label1Click(Sender: TObject);
+begin
+   if FDConnection1.Connected = True then
+                     begin
+                       Label1.Text := 'CONECTADO';
+                       Label1.FontColor := TAlphaColorRec.Red;
+                     end
+                     else
+                      Label1.Text := 'ERRO NA CONEXÃO';
+                      Label1.FontColor := TAlphaColorRec.Black;
+end;
+
+procedure TForm1.Limpar;
+
+     begin
+
+     Form1.txt_nome.Text := '';
+     Form1.txt_sobrenome.Text := '';
+     Form1.txt_permissao.Text := '';
+     Form1.txt_idade.Text := '';
+
+     end;
+
+
+         procedure TForm1.BloquearTXT;
+begin
+
+                        txt_nome.Enabled := false;
+                        txt_sobrenome.Enabled := false;
+                        txt_permissao.Enabled := false;
+                        txt_idade.Enabled := false;
+
+end;
+
+procedure TForm1.bnt_editarClick(Sender: TObject);
+begin
+
+FDTable1.Edit;
+Button2.Enabled := false;
+Button3.Enabled := false;
+btn_salvar.Enabled := true;
+
+end;
+
+procedure TForm1.btn_cancelarClick(Sender: TObject);
+begin
+
+    FDTable1.Cancel;
+    CarregarDados;
+    BloquearTXT;
+    Button2.Enabled := true;
+    Button3.Enabled := true;
+end;
+
+procedure TForm1.btn_excluirClick(Sender: TObject);
+begin
+
+    FDTable1.Delete;
+    ShowMessage('Usuário Excluido');
+    CarregarDados;
+    BloquearTXT;
+
+end;
+
+procedure TForm1.btn_novoClick(Sender: TObject);
+begin
+         FDTable1.Insert;
+         limpar;
+         Button2.Enabled := false;
+         Button3.Enabled := false;
+         btn_salvar.Enabled := true;
+end;
+
+procedure TForm1.btn_salvarClick(Sender: TObject);
+begin
+                 FDTable1.Post;
+                 ShowMessage('Usuário Cadastrado');
+                 Limpar;
+                 BloquearTXT;
+                 btn_salvar.Enabled := false;
+end;
+
+          {-########## Proceduro Botão Conecta BD ############-}
+          procedure TForm1.Button1Click(Sender: TObject);
+                  begin
+                 { FDConnection1.Params.Database := GetCurrentDir+'\Assets\bd.accdb';
+                   FDConnection1.Connected := True;  }
+
+
+
+         end;
+          procedure TForm1.Button2Click(Sender: TObject);
+begin
+  FDTable1.Prior;
+  CarregarDados;
+
+end;
+
+
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+FDTable1.Next;
+CarregarDados;
+end;
+
+procedure TForm1.CarregarDados;
+begin
+
+                   txt_nome.Text := FDTable1.FieldByName('nome').Value;
+                   txt_sobrenome.Text := FDTable1.FieldByName('sobrenome').Value;
+                   txt_permissao.Text := FDTable1.FieldByName('permissao').Value;
+                   txt_idade.Text := FDTable1.FieldByName('idade').Value;
+
+
+end;
+
+{-##########          FIM  PROCEDURE      ############-}
+
+
+ procedure TForm1.FDTable1BeforeEdit(DataSet: TDataSet);
+begin
+
+Habilitartxt;
+
+end;
+
+procedure TForm1.FDTable1BeforeInsert(DataSet: TDataSet);
+                        begin
+
+                 Habilitartxt;
+
+              end;
+
+procedure TForm1.FDTable1BeforePost(DataSet: TDataSet);
+begin
+        FDTable1.FieldByName('nome').Value := txt_nome.Text;
+        FDTable1.FieldByName('sobrenome').Value := txt_sobrenome.Text;
+        FDTable1.FieldByName('permissao').Value := txt_permissao.Text;
+        FDTable1.FieldByName('idade').Value := txt_idade.Text;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+                   FDConnection1.Params.Database := GetCurrentDir+'\Assets\bd.accdb';
+                   FDConnection1.Connected := True;
+                   FDTable1.TableName := 'usuario';
+                   FDTable1.Active :=  true;
+
+                   CarregarDados;
+
+
+
+end;
+
+procedure TForm1.Habilitartxt;
+begin
+
+                        txt_nome.Enabled := true;
+                        txt_sobrenome.Enabled := true;
+                        txt_permissao.Enabled := true;
+                        txt_idade.Enabled := true;
+                        Button2.Enabled := true;
+                        Button3.Enabled := true;
+                        btn_salvar.Enabled := false;
+
+end;
+
+end.
