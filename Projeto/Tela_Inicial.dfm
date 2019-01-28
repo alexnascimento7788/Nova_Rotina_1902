@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Tela Inicial'
-  ClientHeight = 509
+  ClientHeight = 464
   ClientWidth = 1008
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,8 +16,8 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object lb_2: TLabel
-    Left = 189
-    Top = 48
+    Left = 24
+    Top = 91
     Width = 69
     Height = 19
     Caption = 'Num. Ped.'
@@ -29,10 +29,10 @@ object Form1: TForm1
     ParentFont = False
   end
   object lb_3: TLabel
-    Left = 26
-    Top = 113
+    Left = 24
+    Top = 140
     Width = 102
-    Height = 19
+    Height = 32
     Caption = 'Resp. Abertura'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -42,10 +42,10 @@ object Form1: TForm1
     ParentFont = False
   end
   object lb_4: TLabel
-    Left = 189
-    Top = 113
+    Left = 221
+    Top = 140
     Width = 96
-    Height = 19
+    Height = 25
     Caption = 'Data Abertura'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -83,7 +83,7 @@ object Form1: TForm1
   object lb_6: TLabel
     Left = 553
     Top = 48
-    Width = 49
+    Width = 48
     Height = 19
     Caption = 'Cliente'
     Font.Charset = ANSI_CHARSET
@@ -187,7 +187,7 @@ object Form1: TForm1
   object Splitter1: TSplitter
     Left = 0
     Top = 0
-    Height = 509
+    Height = 464
     ExplicitLeft = 920
     ExplicitTop = 432
     ExplicitHeight = 100
@@ -195,14 +195,14 @@ object Form1: TForm1
   object Splitter2: TSplitter
     Left = 3
     Top = 0
-    Height = 509
+    Height = 464
     ExplicitLeft = 840
     ExplicitTop = 424
     ExplicitHeight = 100
   end
   object lb_14: TLabel
-    Left = 12
-    Top = 344
+    Left = 8
+    Top = 237
     Width = 165
     Height = 19
     Caption = 'Descri'#231#227'o da Ocorr'#234'ncia'
@@ -214,7 +214,7 @@ object Form1: TForm1
     ParentFont = False
   end
   object gpx_1: TGroupBox
-    Left = 8
+    Left = 7
     Top = 8
     Width = 369
     Height = 217
@@ -235,23 +235,24 @@ object Form1: TForm1
     TabOrder = 0
   end
   object txt_Nped: TEdit
-    Left = 189
-    Top = 64
-    Width = 156
+    Left = 24
+    Top = 107
+    Width = 145
     Height = 21
+    Color = clInactiveCaption
     TabOrder = 1
   end
   object txt_Usu: TEdit
-    Left = 26
-    Top = 130
+    Left = 24
+    Top = 157
     Width = 143
     Height = 21
     Color = clInactiveCaption
     TabOrder = 2
   end
   object txt_dt: TEdit
-    Left = 189
-    Top = 130
+    Left = 181
+    Top = 157
     Width = 156
     Height = 21
     Color = clInactiveCaption
@@ -401,9 +402,9 @@ object Form1: TForm1
   end
   object ListBox1: TListBox
     Left = 8
-    Top = 360
+    Top = 256
     Width = 992
-    Height = 106
+    Height = 183
     ItemHeight = 13
     TabOrder = 21
   end
@@ -420,5 +421,36 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 22
+  end
+  object btn_pesquisar: TButton
+    Left = 181
+    Top = 62
+    Width = 75
+    Height = 25
+    Caption = 'Pesquisar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 23
+    OnClick = btn_pesquisarClick
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=WINT'
+      'User_Name=alex'
+      'Password=padrao'
+      'DriverID=Ora')
+    Connected = True
+    LoginPrompt = False
+    Left = 224
+    Top = 224
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    Left = 264
+    Top = 224
   end
 end

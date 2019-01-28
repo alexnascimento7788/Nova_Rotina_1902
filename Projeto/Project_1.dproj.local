@@ -2,8 +2,8 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2019/01/17 15:21:04.000.257,=F:\Arquivos Alex\Delphi\Unit1.pas</Transaction>
-    <Transaction>2019/01/17 15:22:04.000.241,F:\Arquivos Alex\Delphi\Unit1.dfm=D:\Github\Nova_Rotina_1902\Projeto\Tela_Inicial.dfm</Transaction>
-    <Transaction>2019/01/17 15:22:04.000.241,F:\Arquivos Alex\Delphi\Unit1.pas=D:\Github\Nova_Rotina_1902\Projeto\Tela_Inicial.pas</Transaction>
-    <Transaction>2019/01/17 15:22:14.000.486,F:\Arquivos Alex\Delphi\Project1.dproj=D:\Github\Nova_Rotina_1902\Projeto\Project_1.dproj</Transaction>
+    <Transaction>2019/01/17 15:22:04.000.241,D:\Github\Nova_Rotina_1902\Projeto\Tela_Inicial.dfm=F:\Arquivos Alex\Delphi\Unit1.dfm</Transaction>
+    <Transaction>2019/01/17 15:22:04.000.241,D:\Github\Nova_Rotina_1902\Projeto\Tela_Inicial.pas=F:\Arquivos Alex\Delphi\Unit1.pas</Transaction>
+    <Transaction>2019/01/17 15:22:14.000.486,D:\Github\Nova_Rotina_1902\Projeto\Project_1.dproj=F:\Arquivos Alex\Delphi\Project1.dproj</Transaction>
   </Transactions>
 </BorlandProject>
